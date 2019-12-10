@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8125B4C1C8FD51355B97A88B /* Pods_XYZQRKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1ECDFBB18CAA8D300A1E9A /* Pods_XYZQRKit.framework */; };
 		D661D077239F83E700293095 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D076239F83E700293095 /* AppDelegate.swift */; };
 		D661D079239F83E700293095 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D078239F83E700293095 /* SceneDelegate.swift */; };
 		D661D07B239F83E700293095 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D07A239F83E700293095 /* ViewController.swift */; };
@@ -15,11 +16,28 @@
 		D661D083239F83E800293095 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D661D081239F83E800293095 /* LaunchScreen.storyboard */; };
 		D661D08E239F842B00293095 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D661D08A239F842B00293095 /* README.md */; };
 		D661D08F239F842B00293095 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D661D08B239F842B00293095 /* LICENSE */; };
-		D661D090239F842B00293095 /* XYZQRcode.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D661D08C239F842B00293095 /* XYZQRcode.podspec */; };
+		D661D090239F842B00293095 /* XYZQRKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D661D08C239F842B00293095 /* XYZQRKit.podspec */; };
 		D661D091239F842B00293095 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D661D08D239F842B00293095 /* Podfile */; };
+		D661D0A1239F84F600293095 /* QQScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D093239F84F600293095 /* QQScanViewController.swift */; };
+		D661D0A2239F84F600293095 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D661D094239F84F600293095 /* CodeScan.bundle */; };
+		D661D0A3239F84F600293095 /* ScanResultController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D661D095239F84F600293095 /* ScanResultController.xib */; };
+		D661D0A4239F84F600293095 /* LBXScanNetAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D096239F84F600293095 /* LBXScanNetAnimation.swift */; };
+		D661D0A5239F84F600293095 /* XYZQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D097239F84F600293095 /* XYZQRCode.swift */; };
+		D661D0A6239F84F600293095 /* LBXScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D098239F84F600293095 /* LBXScanView.swift */; };
+		D661D0A7239F84F600293095 /* LBXScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D099239F84F600293095 /* LBXScanViewController.swift */; };
+		D661D0A8239F84F600293095 /* LBXScanLineAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D09A239F84F600293095 /* LBXScanLineAnimation.swift */; };
+		D661D0A9239F84F600293095 /* ScanResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D09B239F84F600293095 /* ScanResultController.swift */; };
+		D661D0AA239F84F600293095 /* AllFuncTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D09C239F84F600293095 /* AllFuncTVC.swift */; };
+		D661D0AB239F84F600293095 /* LBXScanViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D09D239F84F600293095 /* LBXScanViewStyle.swift */; };
+		D661D0AC239F84F600293095 /* LBXPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D09E239F84F600293095 /* LBXPermissions.swift */; };
+		D661D0AD239F84F600293095 /* XYZScanObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D09F239F84F600293095 /* XYZScanObject.swift */; };
+		D661D0AE239F84F600293095 /* LBXScanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661D0A0239F84F600293095 /* LBXScanWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2CBEB469B3F79F4C1306C8C /* Pods-XYZQRKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYZQRKit.release.xcconfig"; path = "Target Support Files/Pods-XYZQRKit/Pods-XYZQRKit.release.xcconfig"; sourceTree = "<group>"; };
+		AF1ECDFBB18CAA8D300A1E9A /* Pods_XYZQRKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XYZQRKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B482641A8323A447FDAD9AB3 /* Pods-XYZQRKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYZQRKit.debug.xcconfig"; path = "Target Support Files/Pods-XYZQRKit/Pods-XYZQRKit.debug.xcconfig"; sourceTree = "<group>"; };
 		D661D073239F83E700293095 /* XYZQRKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYZQRKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D661D076239F83E700293095 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D661D078239F83E700293095 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,8 +48,22 @@
 		D661D084239F83E800293095 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D661D08A239F842B00293095 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D661D08B239F842B00293095 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		D661D08C239F842B00293095 /* XYZQRcode.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XYZQRcode.podspec; sourceTree = "<group>"; };
-		D661D08D239F842B00293095 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		D661D08C239F842B00293095 /* XYZQRKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XYZQRKit.podspec; sourceTree = "<group>"; };
+		D661D08D239F842B00293095 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D661D093239F84F600293095 /* QQScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQScanViewController.swift; sourceTree = "<group>"; };
+		D661D094239F84F600293095 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
+		D661D095239F84F600293095 /* ScanResultController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanResultController.xib; sourceTree = "<group>"; };
+		D661D096239F84F600293095 /* LBXScanNetAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanNetAnimation.swift; sourceTree = "<group>"; };
+		D661D097239F84F600293095 /* XYZQRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYZQRCode.swift; sourceTree = "<group>"; };
+		D661D098239F84F600293095 /* LBXScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanView.swift; sourceTree = "<group>"; };
+		D661D099239F84F600293095 /* LBXScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanViewController.swift; sourceTree = "<group>"; };
+		D661D09A239F84F600293095 /* LBXScanLineAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanLineAnimation.swift; sourceTree = "<group>"; };
+		D661D09B239F84F600293095 /* ScanResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanResultController.swift; sourceTree = "<group>"; };
+		D661D09C239F84F600293095 /* AllFuncTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllFuncTVC.swift; sourceTree = "<group>"; };
+		D661D09D239F84F600293095 /* LBXScanViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanViewStyle.swift; sourceTree = "<group>"; };
+		D661D09E239F84F600293095 /* LBXPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXPermissions.swift; sourceTree = "<group>"; };
+		D661D09F239F84F600293095 /* XYZScanObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYZScanObject.swift; sourceTree = "<group>"; };
+		D661D0A0239F84F600293095 /* LBXScanWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,21 +71,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8125B4C1C8FD51355B97A88B /* Pods_XYZQRKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4437C90F6EBA9A829BDC4D99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B482641A8323A447FDAD9AB3 /* Pods-XYZQRKit.debug.xcconfig */,
+				A2CBEB469B3F79F4C1306C8C /* Pods-XYZQRKit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B793F5BF7764A4A290CEC0F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF1ECDFBB18CAA8D300A1E9A /* Pods_XYZQRKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D661D06A239F83E700293095 = {
 			isa = PBXGroup;
 			children = (
 				D661D08D239F842B00293095 /* Podfile */,
 				D661D08B239F842B00293095 /* LICENSE */,
 				D661D08A239F842B00293095 /* README.md */,
-				D661D08C239F842B00293095 /* XYZQRcode.podspec */,
+				D661D08C239F842B00293095 /* XYZQRKit.podspec */,
 				D661D075239F83E700293095 /* XYZQRKit */,
 				D661D074239F83E700293095 /* Products */,
+				4437C90F6EBA9A829BDC4D99 /* Pods */,
+				B793F5BF7764A4A290CEC0F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,12 +123,34 @@
 				D661D076239F83E700293095 /* AppDelegate.swift */,
 				D661D078239F83E700293095 /* SceneDelegate.swift */,
 				D661D07A239F83E700293095 /* ViewController.swift */,
+				D661D092239F84F600293095 /* Source */,
 				D661D07C239F83E700293095 /* Main.storyboard */,
 				D661D07F239F83E800293095 /* Assets.xcassets */,
 				D661D081239F83E800293095 /* LaunchScreen.storyboard */,
 				D661D084239F83E800293095 /* Info.plist */,
 			);
 			path = XYZQRKit;
+			sourceTree = "<group>";
+		};
+		D661D092239F84F600293095 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D661D093239F84F600293095 /* QQScanViewController.swift */,
+				D661D094239F84F600293095 /* CodeScan.bundle */,
+				D661D095239F84F600293095 /* ScanResultController.xib */,
+				D661D096239F84F600293095 /* LBXScanNetAnimation.swift */,
+				D661D097239F84F600293095 /* XYZQRCode.swift */,
+				D661D098239F84F600293095 /* LBXScanView.swift */,
+				D661D099239F84F600293095 /* LBXScanViewController.swift */,
+				D661D09A239F84F600293095 /* LBXScanLineAnimation.swift */,
+				D661D09B239F84F600293095 /* ScanResultController.swift */,
+				D661D09C239F84F600293095 /* AllFuncTVC.swift */,
+				D661D09D239F84F600293095 /* LBXScanViewStyle.swift */,
+				D661D09E239F84F600293095 /* LBXPermissions.swift */,
+				D661D09F239F84F600293095 /* XYZScanObject.swift */,
+				D661D0A0239F84F600293095 /* LBXScanWrapper.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D661D087239F83E800293095 /* Build configuration list for PBXNativeTarget "XYZQRKit" */;
 			buildPhases = (
+				F120ADEB3668BDD98DB889A6 /* [CP] Check Pods Manifest.lock */,
 				D661D06F239F83E700293095 /* Sources */,
 				D661D070239F83E700293095 /* Frameworks */,
 				D661D071239F83E700293095 /* Resources */,
+				96DD16E16155B449421825CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,24 +215,80 @@
 			files = (
 				D661D083239F83E800293095 /* LaunchScreen.storyboard in Resources */,
 				D661D080239F83E800293095 /* Assets.xcassets in Resources */,
-				D661D090239F842B00293095 /* XYZQRcode.podspec in Resources */,
+				D661D090239F842B00293095 /* XYZQRKit.podspec in Resources */,
 				D661D08E239F842B00293095 /* README.md in Resources */,
+				D661D0A3239F84F600293095 /* ScanResultController.xib in Resources */,
 				D661D07E239F83E700293095 /* Main.storyboard in Resources */,
 				D661D091239F842B00293095 /* Podfile in Resources */,
 				D661D08F239F842B00293095 /* LICENSE in Resources */,
+				D661D0A2239F84F600293095 /* CodeScan.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		96DD16E16155B449421825CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XYZQRKit/Pods-XYZQRKit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XYZQRKit/Pods-XYZQRKit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XYZQRKit/Pods-XYZQRKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F120ADEB3668BDD98DB889A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XYZQRKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D661D06F239F83E700293095 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D661D0A7239F84F600293095 /* LBXScanViewController.swift in Sources */,
+				D661D0AE239F84F600293095 /* LBXScanWrapper.swift in Sources */,
 				D661D07B239F83E700293095 /* ViewController.swift in Sources */,
+				D661D0A6239F84F600293095 /* LBXScanView.swift in Sources */,
+				D661D0AD239F84F600293095 /* XYZScanObject.swift in Sources */,
+				D661D0A4239F84F600293095 /* LBXScanNetAnimation.swift in Sources */,
+				D661D0AC239F84F600293095 /* LBXPermissions.swift in Sources */,
 				D661D077239F83E700293095 /* AppDelegate.swift in Sources */,
+				D661D0A9239F84F600293095 /* ScanResultController.swift in Sources */,
+				D661D0A8239F84F600293095 /* LBXScanLineAnimation.swift in Sources */,
+				D661D0AA239F84F600293095 /* AllFuncTVC.swift in Sources */,
+				D661D0AB239F84F600293095 /* LBXScanViewStyle.swift in Sources */,
 				D661D079239F83E700293095 /* SceneDelegate.swift in Sources */,
+				D661D0A1239F84F600293095 /* QQScanViewController.swift in Sources */,
+				D661D0A5239F84F600293095 /* XYZQRCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +430,7 @@
 		};
 		D661D088239F83E800293095 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B482641A8323A447FDAD9AB3 /* Pods-XYZQRKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -319,6 +452,7 @@
 		};
 		D661D089239F83E800293095 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2CBEB469B3F79F4C1306C8C /* Pods-XYZQRKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

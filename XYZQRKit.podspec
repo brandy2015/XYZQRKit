@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint XYZQRcode.podspec' to ensure this is a
+#  Be sure to run `pod spec lint XYZQRKit.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-    s.name         = "XYZQRcode"
-    s.version      = "1.1.1"
+    s.name         = "XYZQRKit"
+    s.version      = "1.1.2"
     s.summary      = "Private pod to set"
     s.description  = <<-DESC
         Private pod to deal with QRCode
@@ -34,10 +34,10 @@ Pod::Spec.new do |s|
     s.platform     = :ios, "13.0"
 
 
-    s.source       = { :git => "https://github.com/brandy2015/XYZQRcode.git", :tag => "1.1.1"}
-s.source_files = "XYZQRcode/Source/*"
+    s.source       = { :git => "https://github.com/brandy2015/XYZQRKit.git", :tag => "1.1.2"}
+s.source_files = "XYZQRKit/Source/*"
 
-s.resources = "XYZQRcode/Source/CodeScan.bundle"
+s.resources = "XYZQRKit/Source/CodeScan.bundle"
 
 
     s.dependency 'EFQRCode'

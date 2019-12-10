@@ -1,4 +1,4 @@
-XYZQRcode
+XYZQRKit
 
 简洁调用QRcode
 
@@ -19,13 +19,13 @@ XYZQRcode
 ### CocoaPods
 
 ``` ruby
-pod 'XYZQRcode'
+pod 'XYZQRKit'
 ```
 
 ### Manual
 
-Add XYZQRcode folder into your project.
+Add XYZQRKit folder into your project.
 
 ## Example usage
-Import XYZQRcode
+Import XYZQRKit
 
