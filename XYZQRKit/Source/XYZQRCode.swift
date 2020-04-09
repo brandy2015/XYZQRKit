@@ -10,7 +10,8 @@ import UIKit
 import EFQRCode
 import MobileCoreServices            //picker.mediaTypes的类型
 import PhotosUI                      //LivePhoto使用的依赖库
-import SHPathManager
+//import SHPathManager
+import XYZPathKit
 import FileKit
 import SoHow
 
@@ -28,8 +29,9 @@ public extension UIImage{
 
 //Generate
 public extension UIImage{
-    func ImgToQR(WithString:String,completion: @escaping ((_ BackQR: UIImage?) -> Void)){
-        guard let tryImage = EFQRCode.generate(content: WithString,watermark: self.cgImage) else{completion(nil);return}
+    func ImgToQR(WithString:String,icon:UIImage?,completion: @escaping ((_ BackQR: UIImage?) -> Void)){
+        
+        guard let tryImage = EFQRCode.generate(content: WithString,watermark: self.cgImage,icon: icon?.cgImage ) else{completion(nil);return}
         completion(UIImage(cgImage: tryImage))
     }
     
@@ -37,15 +39,19 @@ public extension UIImage{
 
 //Generate With GIFData
 public extension Data{
-    func GIFToQR(WithString:String,completion: @escaping ((_ GIFData: Data?,_ GIfURL: URL?) -> Void)){
+    func GIFToQR(WithString:String,icon:UIImage?,completion: @escaping ((_ GIFData: Data?,_ GIfURL: URL?) -> Void)){
         let URLPath = userCookies + (UUID().uuidString + ".gif")
         let generator = EFQRCodeGenerator(content: WithString)
+        
+        generator.setIcon(icon: icon?.cgImage, size: nil)
+        
         guard let qrcodeData = EFQRCode.generateWithGIF(data: self, generator: generator) else{ completion(nil,nil);return}
         do { try qrcodeData.write(to: URLPath)
-             completion(qrcodeData,URLPath.url)
+            completion(qrcodeData,URLPath.url)
         }catch{completion(nil, nil)}
     }
 }
+
 
 //GenerateQR With String
 public extension String{
@@ -103,24 +109,48 @@ public extension UIImageView{
         self.isUserInteractionEnabled = true
         self.addGestureRecognizer(guesture)
     }
-    
     @objc func longPress(_ gusture:UILongPressGestureRecognizer){print("长按了")// 检测手势阶段
         switch gusture.state {
-            case .began:XYZResponse.D点按马达震动反馈(style: .heavy);print("开始点按")
-            case .ended:print("停止点按");XYZResponse.D点按马达震动反馈(style: .heavy)
-                    guard let img = self.image else{print("没有照片");return}
-                    XYZResponse.D点按马达震动反馈(style: .heavy)
+        case .began:XYZResponse.D点按马达震动反馈(style: .heavy);print("开始点按")
+        case .ended:print("停止点按");XYZResponse.D点按马达震动反馈(style: .heavy)
+        guard let img = self.image else{print("没有照片");return}
+        XYZResponse.D点按马达震动反馈(style: .heavy)
+        
+        
             img.SaveToAlbum { (Succeedx, error) in
                 if let error = error{
                     print(error)
                 }else if Succeedx{
-                    XYZJump.To.Album();print("弹出是否保存")
+                    DispatchQueue.main.async {
+                        XYZJump.To.Album();print("弹出是否保存")
+                    }
                 }
             }
+        
             
-            default: print("没有照片")
+            
+            
+        default: print("没有照片")
         }
+        
     }
+//    @objc func longPress(_ gusture:UILongPressGestureRecognizer){print("长按了")// 检测手势阶段
+//        switch gusture.state {
+//            case .began:XYZResponse.D点按马达震动反馈(style: .heavy);print("开始点按")
+//            case .ended:print("停止点按");XYZResponse.D点按马达震动反馈(style: .heavy)
+//                    guard let img = self.image else{print("没有照片");return}
+//                    XYZResponse.D点按马达震动反馈(style: .heavy)
+//            img.SaveToAlbum { (Succeedx, error) in
+//                if let error = error{
+//                    print(error)
+//                }else if Succeedx{
+//                    XYZJump.To.Album();print("弹出是否保存")
+//                }
+//            }
+//
+//            default: print("没有照片")
+//        }
+//    }
     private class XYZResponse: NSObject {
         /// 创建枚举
         public enum FeedbackType: Int {case light,medium,heavy,success,warning,error,none}

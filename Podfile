@@ -6,7 +6,10 @@ target 'XYZQRKit' do
   use_frameworks!
 
     pod 'EFQRCode'
-    pod 'FileKit'
-    pod 'SHPathManager'     #文件路径管理
+
+ #   pod 'FileKit'
+ #   pod 'SHPathManager'     #文件路径管理
     pod 'SoHow'             #自己的库
+    pod 'XYZPathKit'  
+
 end

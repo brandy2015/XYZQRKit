@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
     s.name         = "XYZQRKit"
-    s.version      = "1.1.2"
+    s.version      = "1.1.3"
     s.summary      = "Private pod to set"
     s.description  = <<-DESC
         Private pod to deal with QRCode
@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
     s.platform     = :ios, "13.0"
 
 
-    s.source       = { :git => "https://github.com/brandy2015/XYZQRKit.git", :tag => "1.1.2"}
+    s.source       = { :git => "https://github.com/brandy2015/XYZQRKit.git", :tag => "1.1.3"}
 s.source_files = "XYZQRKit/Source/*"
 
 s.resources = "XYZQRKit/Source/CodeScan.bundle"
@@ -42,7 +42,7 @@ s.resources = "XYZQRKit/Source/CodeScan.bundle"
 
     s.dependency 'EFQRCode'
     s.dependency 'FileKit'
-    s.dependency 'SHPathManager'
+    s.dependency 'XYZPathKit'
     s.dependency 'SoHow'
 
 
