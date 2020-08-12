@@ -70,8 +70,7 @@ extension AllFuncTVC: LBXScanViewControllerDelegate {
         print("显示结果");print(str)
     }
 }
-
-import SoHow
+ 
 extension AllFuncTVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     // MARK: - ----相册选择图片识别二维码 （条形码没有找到系统方法）
@@ -83,5 +82,13 @@ extension AllFuncTVC: UIImagePickerControllerDelegate, UINavigationControllerDel
         let arrayResult = LBXScanWrapper.recognizeQRImage(image: imagex)
         guard arrayResult.count > 0 , let result = arrayResult.first else{showMsg(title: "", message: "识别失败");return}
         showMsg(title: result.strBarCodeType, message: result.strScanned)
+    }
+}
+private extension UIViewController{
+    func showMsg(title:String?,message:String?){
+        let alertController = UIAlertController(title: title, message:message, preferredStyle: UIAlertController.Style.alert)
+        let alertAction = UIAlertAction(title:  "知道了", style: UIAlertAction.Style.default) { (alertAction) -> Void in }
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
