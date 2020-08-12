@@ -139,5 +139,8 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
             alertController.addAction(alertAction)
             present(alertController, animated: true, completion: nil)
     }
-    deinit{print("LBXScanViewController deinit")}
+    deinit{
+//        print("LBXScanViewController deinit")
+        
+    }
 }

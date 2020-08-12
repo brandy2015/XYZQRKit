@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FileKit
+ 
 import MediaPlayer
 import AVFoundation
 
@@ -68,8 +68,6 @@ public extension AVMetadataItem{
         return MP3Data
     }
 }
-
-
 
 
 

@@ -8,9 +8,12 @@
 
 import UIKit
 import PDFKit
-import FileKit
 import MobileCoreServices            //picker.mediaTypes的类型
 import PhotosUI                      //LivePhoto使用的依赖库
+
+
+public extension String {  var ImageFromName:UIImage?{ return UIImage(named: self)}}
+
 
 public class XYZImage: NSObject {
     public static func GetthumbnailImageFromPDF(PathX:Path?,sizeX:CGSize,atPage:Int = 0) -> UIImage? {

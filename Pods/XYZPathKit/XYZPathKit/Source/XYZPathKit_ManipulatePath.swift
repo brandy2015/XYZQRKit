@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FileKit
+ 
 import XYZTimeKit
  
 
@@ -139,10 +139,7 @@ public func MoveToZip(searchDepth:Int = 1)  {
 public func MoveToPic(searchDepth:Int = 1)  {
     if !userPic.exists{try?  userPic.createDirectory()}else{ print("存在")}
     let textFiles = Path.userDocuments.find(searchDepth: searchDepth) { path in
-        
-        
         PicContain判断函数(FilePath: path)
-        
     }
     for i in textFiles{
         if i^ != userPic{
@@ -150,6 +147,24 @@ public func MoveToPic(searchDepth:Int = 1)  {
                 do {
                     let 新命名 = (XYZTime.NowString + i.fileName)
                     try i ->> (userPic + 新命名)
+                }catch{print("移动失败")}
+            }
+        }else{ /* print(i.fileName + "在Music中")*/}
+    }
+}
+
+public func 检测Pic文件并移至Pic文件夹(searchDepth:Int = 1)  {
+    let textFiles = Path.userDocuments.find(searchDepth: searchDepth) { path in  path.isPic}
+    
+    for i in textFiles{
+        if i^ != userPic{
+            do {
+                try i ->> (userPic + i.fileName)
+            }catch{print("再次尝试移动")
+                do {
+                    let newFileName = UUID().uuidString + "." + i.pathExtension
+                    let newFilePath = userPic + newFileName
+                    try i ->> newFilePath
                 }catch{print("移动失败")}
             }
         }else{ /* print(i.fileName + "在Music中")*/}

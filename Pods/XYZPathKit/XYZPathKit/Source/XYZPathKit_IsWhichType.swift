@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import FileKit
-
-
+ 
 
 public func Musiccontain判断函数Music(FilePath:Path) -> Bool {
     let fileExtension = FilePath.pathExtension.uppercased()

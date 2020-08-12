@@ -7,10 +7,6 @@
 //
  
 import UIKit
-import FileKit
-//import MediaPlayer
-//import AVFoundation
-//import SHTManager
 
 //获取系统的路径
 public let userDocument     = Path.userDocuments

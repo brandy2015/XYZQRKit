@@ -26,7 +26,7 @@ public class XYZScanObject: NSObject {
         print("qqStyle")
         let vc = QQScanViewController()
         var style = LBXScanViewStyle()
-        
+        style.colorAngle = UIColor(red: 255.0/255.0, green: 144.0/255.0, blue: 32.0/255.0, alpha: 0.9)
         let light_green = ImageInBundle(WithName: "qrcode_scan_light_green@2x")
         style.animationImage = light_green//UIImage(named: "CodeScan.bundle/qrcode_scan_light_green")
         vc.scanStyle = style

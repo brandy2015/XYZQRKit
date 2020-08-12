@@ -5,11 +5,7 @@ target 'XYZQRKit' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-    pod 'EFQRCode'
-
- #   pod 'FileKit'
- #   pod 'SHPathManager'     #文件路径管理
-    pod 'SoHow'             #自己的库
+    pod 'EFQRCode' 
     pod 'XYZPathKit'  
 
 end

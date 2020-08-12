@@ -11,7 +11,7 @@ import CoreAudio
 import AVKit
 import AVFoundation
 import AssetsLibrary
-import FileKit
+ 
 
 public class XYZVideo: NSObject {
     

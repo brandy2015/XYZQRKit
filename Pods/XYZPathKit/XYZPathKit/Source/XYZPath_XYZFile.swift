@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FileKit
+ 
 //Path.pathExtension
 //url.pathExtension
 //Optional("mp4")
@@ -76,9 +76,9 @@ public extension Path{
     }
 }
 
-public enum FileType:String {case Music,Video,PDF,Compression,LMR,Photo,unknowntype,Directory}//文件路径
+public enum XYZFileType:String {case Music,Video,PDF,Compression,LMR,Photo,unknowntype,Directory}//文件路径
 
-public func GetFileType(GivePath:Path) -> FileType {
+public func GetFileType(GivePath:Path) -> XYZFileType {
     guard GivePath.pathExtension != "" else {return GivePath.isDirectory ? .Directory : .unknowntype}
     switch GivePath.pathExtension.uppercased() {
         case "MP3","FLAC","M4A","WAV","M4R": return .Music
@@ -112,3 +112,6 @@ public func FileInMainBundlePath(Name:String,Type:String) -> Path? {
         return Path(filePath)
     }else{return nil}
 }
+
+
+

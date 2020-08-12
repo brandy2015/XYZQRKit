@@ -42,7 +42,7 @@ public class QQScanViewController: LBXScanViewController {
         if (bottomItemsView != nil) {return}
         let yMax = self.view.frame.maxY - self.view.frame.minY
         bottomItemsView = UIView(frame: CGRect(x: 0.0, y: yMax-100, width: self.view.frame.size.width, height: 100))
-        bottomItemsView!.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
+        bottomItemsView!.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.8)
         self.view.addSubview(bottomItemsView!)
         let size = CGSize(width: 65, height: 87)
         
@@ -85,7 +85,7 @@ public class QQScanViewController: LBXScanViewController {
     
     @objc func dismissVC(){
         XYZResponse.D点按马达震动反馈(style: .medium)
-        Resultdelegate?.Result(self)
+//        Resultdelegate?.Result(self)
         dismiss(animated: true, completion: nil)
     }
     private class XYZResponse: NSObject {

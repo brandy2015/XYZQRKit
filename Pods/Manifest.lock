@@ -2,42 +2,25 @@ PODS:
   - EFQRCode (5.1.6):
     - EFQRCode/Core (= 5.1.6)
   - EFQRCode/Core (5.1.6)
-  - FileKit (5.2.0)
-  - MBProgressHUD (1.2.0)
-  - SoHow (2.1.7):
-    - MBProgressHUD
-  - SwiftDate (6.1.0)
-  - XYZPathKit (2.0.4):
-    - FileKit
-    - SwiftDate
+  - XYZPathKit (2.1.2):
     - XYZTimeKit
-  - XYZTimeKit (2.0.2):
-    - SwiftDate
+  - XYZTimeKit (2.0.5)
 
 DEPENDENCIES:
   - EFQRCode
-  - SoHow
   - XYZPathKit
 
 SPEC REPOS:
   trunk:
     - EFQRCode
-    - FileKit
-    - MBProgressHUD
-    - SoHow
-    - SwiftDate
     - XYZPathKit
     - XYZTimeKit
 
 SPEC CHECKSUMS:
   EFQRCode: a7ea2e517912f5bf6ba258b631327a83cd8084a5
-  FileKit: 10bfd8a3023a0b09f24c9f49546cbbddf43fd464
-  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  SoHow: c4d0ba59a76a71264f1ea52805a9a9b1ff174083
-  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
-  XYZPathKit: 7647325a8ccafe50330da2c7c1abc75dd6a050dc
-  XYZTimeKit: 2df74d11cfa495ff7e2964017339943f44fefefe
+  XYZPathKit: abe58b33866d8b8ff220645dac2bbbe8b98227be
+  XYZTimeKit: 20dd15aabbf318cc9a18da7409f63d58ccdf4f1a
 
-PODFILE CHECKSUM: a4656d37d5c77b0eb59a34a35ca4da9e231bb1c6
+PODFILE CHECKSUM: 39ead910bcec78f94a63c1676c3771109623c783
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0.beta.1

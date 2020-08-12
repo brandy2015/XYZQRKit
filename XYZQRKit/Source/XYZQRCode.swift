@@ -10,10 +10,7 @@ import UIKit
 import EFQRCode
 import MobileCoreServices            //picker.mediaTypes的类型
 import PhotosUI                      //LivePhoto使用的依赖库
-//import SHPathManager
 import XYZPathKit
-import FileKit
-import SoHow
 
 public class XYZQRKit:NSObject{}
 //Scan
@@ -170,6 +167,38 @@ public extension UIImageView{
         }
         
     }
+    
+    
+    private class XYZJump: NSObject {
+        public static var To = XYZJump()
+         
+        public func Album() {decodejump(To: "cGhvdG9zLXJlZGlyZWN0Oi8v")}
+        
+        //需要商榷
+        //    TOUCHID
+        public func TOUCHID()  {
+            decodejump(To: "QXBwLVByZWZzOnJvb3Q9VE9VQ0hJRF9QQVNTQ09ERQ==")
+        }
+          
+        private func decodejump(To code:String) {
+            //跳转
+            let urlStr = decode(code)
+            if let url = URL(string:urlStr) {
+                if #available(iOS 10.0, *) {
+                    DispatchQueue.main.async {
+                        UIApplication.shared.open(url, options: Dictionary(), completionHandler: nil)
+                    }
+                } else { UIApplication.shared.openURL(url)}}
+        }
+        
+        //base64解码
+        private func decode(_ string: String) -> String {
+            let data = Data(base64Encoded: string, options: [])
+            let decodedStr = String(data: data ?? Data(), encoding: .utf8)
+            return decodedStr ?? ""
+        }
+    }
+    
 }
 
 

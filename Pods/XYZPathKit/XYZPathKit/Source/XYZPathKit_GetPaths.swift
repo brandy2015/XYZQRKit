@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FileKit
+ 
 import XYZTimeKit
 
 public func GetPathsInMusic(searchDepth:Int = 1) -> [Path] {

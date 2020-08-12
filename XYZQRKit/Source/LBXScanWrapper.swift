@@ -428,5 +428,8 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate,AVCap
         
         return newPic!;
     }
-    deinit{print("LBXScanWrapper deinit")}
+    deinit{
+//        print("LBXScanWrapper deinit")
+        
+    }
 }

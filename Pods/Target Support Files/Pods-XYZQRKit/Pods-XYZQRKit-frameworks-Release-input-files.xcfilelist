@@ -1,8 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-XYZQRKit/Pods-XYZQRKit-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/EFQRCode/EFQRCode.framework
-${BUILT_PRODUCTS_DIR}/FileKit/FileKit.framework
-${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
-${BUILT_PRODUCTS_DIR}/SoHow/SoHow.framework
-${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework
 ${BUILT_PRODUCTS_DIR}/XYZPathKit/XYZPathKit.framework
 ${BUILT_PRODUCTS_DIR}/XYZTimeKit/XYZTimeKit.framework

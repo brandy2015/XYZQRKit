@@ -8,8 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, QQScanViewControllerDelegate {
+    func Result(_ controller: QQScanViewController, didFinishGet ScanResults: [LBXScanResult]) {
+         
+    }
+    
+    func Result(_ controller: QQScanViewController) {
+         
+    }
+    
 
+    @IBAction func sdfas(_ sender: Any) {
+        
+         XYZScan.qqStyle(VC: self, delegate: self)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

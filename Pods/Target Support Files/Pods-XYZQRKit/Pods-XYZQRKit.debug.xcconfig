@@ -1,12 +1,14 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/EFQRCode" "${PODS_CONFIGURATION_BUILD_DIR}/FileKit" "${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/SoHow" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftDate" "${PODS_CONFIGURATION_BUILD_DIR}/XYZPathKit" "${PODS_CONFIGURATION_BUILD_DIR}/XYZTimeKit"
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/EFQRCode" "${PODS_CONFIGURATION_BUILD_DIR}/XYZPathKit" "${PODS_CONFIGURATION_BUILD_DIR}/XYZTimeKit"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/EFQRCode/EFQRCode.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/FileKit/FileKit.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SoHow/SoHow.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftDate/SwiftDate.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/XYZPathKit/XYZPathKit.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/XYZTimeKit/XYZTimeKit.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/EFQRCode/EFQRCode.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/XYZPathKit/XYZPathKit.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/XYZTimeKit/XYZTimeKit.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "CoreGraphics" -framework "CoreImage" -framework "EFQRCode" -framework "FileKit" -framework "Foundation" -framework "ImageIO" -framework "MBProgressHUD" -framework "QuartzCore" -framework "SoHow" -framework "SwiftDate" -framework "XYZPathKit" -framework "XYZTimeKit"
+OTHER_LDFLAGS = $(inherited) -framework "CoreGraphics" -framework "CoreImage" -framework "EFQRCode" -framework "Foundation" -framework "ImageIO" -framework "XYZPathKit" -framework "XYZTimeKit"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
+PODS_XCFRAMEWORKS_BUILD_DIR = $(PODS_CONFIGURATION_BUILD_DIR)/XCFrameworkIntermediates
 USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES
