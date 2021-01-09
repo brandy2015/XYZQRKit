@@ -94,6 +94,7 @@ git clone git@github.com:EFPrefix/EFQRCode.git; cd EFQRCode; sh Startup.sh; open
 | 1.x     | Xcode 8.0+<br>Swift 3.0+<br>iOS 8.0+ / macOS 10.11+ / tvOS 9.0+                |
 | 4.x     | Xcode 9.0+<br>Swift 4.0+<br>iOS 8.0+ / macOS 10.11+ / tvOS 9.0+ / watchOS 2.0+ |
 | 5.x     | Xcode 11.1+<br>Swift 5.0+<br>iOS 8.0+ / macOS 10.11+ / tvOS 9.0+ / watchOS 2.0+|
+| 6.x     | Xcode 12.0+<br>Swift 5.0+<br>iOS 9.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+|
 
 ## Installation
 
@@ -103,7 +104,7 @@ EFQRCode is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'EFQRCode', '~> 5.1.6'
+pod 'EFQRCode', '~> 6.0.0'
 ```
 
 Try `pod 'EFQRCode/watchOS'` instead if you need to use it in watchOS.
@@ -128,7 +129,7 @@ $ brew install carthage
 To integrate EFQRCode into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "EFPrefix/EFQRCode" ~> 5.1.6
+github "EFPrefix/EFQRCode" ~> 6.0.0
 ```
 
 Run `carthage update` to build the framework and drag the built `EFQRCode.framework` into your Xcode project.
@@ -141,7 +142,7 @@ Once you have your Swift package set up, adding EFQRCode as a dependency is as e
 
 ```swift
 dependencies: [
-    .Package(url: "https://github.com/EFPrefix/EFQRCode.git", Version(5, 1, 6))
+    .package(url: "https://github.com/EFPrefix/EFQRCode.git", .upToNextMinor(from: "6.0.0"))
 ]
 ```
 
@@ -317,7 +318,7 @@ Thanks for your support, 🙏
 
 ## Thanks
 
-Thanks for the help from JetBrains's [Open Source Support Program](https://www.jetbrains.com/community/opensource/?from=EFQRCode).
+- Thanks for the help from JetBrains's [Open Source Support Program](https://www.jetbrains.com/community/opensource/?from=EFQRCode).
 
 <a href="https://www.jetbrains.com/?from=EFQRCode">
     <img src="https://raw.githubusercontent.com/EFPrefix/EFQRCode/ce8982e1858d62ac8b9fecec96f5369d8b1b62c3/logo/jetbrains.svg?sanitize=true" width = "20%">

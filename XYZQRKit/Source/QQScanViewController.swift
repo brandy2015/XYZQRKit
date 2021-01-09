@@ -28,6 +28,7 @@ public class QQScanViewController: LBXScanViewController {
         // Do any additional setup after loading the view.
     }
     
+    @available(iOS, deprecated: 13.0)
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         drawBottomItems()

@@ -39,12 +39,15 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     //设置框内识别
     open func setOpenInterestRect(isOpen:Bool){isOpenInterestRect = isOpen}
     override open func viewWillAppear(_ animated: Bool) {super.viewWillAppear(animated)}
+    
+    @available(iOS, deprecated: 13.0)
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         drawScanView()
         perform(#selector(LBXScanViewController.startScan), with: nil, afterDelay: 0.3)
     }
     
+    @available(iOS, deprecated: 13.0)
     @objc open func startScan(){
         if (scanObj == nil){
             var cropRect = CGRect.zero

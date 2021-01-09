@@ -27,7 +27,9 @@ public class LBXPermissions: NSObject {
                 PHPhotoLibrary.requestAuthorization({ (status) in
                     DispatchQueue.main.async {comletion(status == PHAuthorizationStatus.authorized ? true:false)}
                 })
-            @unknown default:comletion(false)
+        case .limited:comletion(false)
+            
+        @unknown default:comletion(false)
         }
     }
     

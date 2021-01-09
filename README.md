@@ -1,14 +1,14 @@
 XYZQRKit
 
-简洁调用QRcode
+简洁识别生成QRcode
 
 
 
 ## Requirements
-* Xcode 11.2.1 or higher
+* Xcode 12.0.1 or higher
 * iOS 13.0 or higher (may work on previous versions, just did not test it)
 * ARC
-* Swift 5.1
+* Swift 5.3
 
 ## Demo
 

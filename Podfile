@@ -6,6 +6,6 @@ target 'XYZQRKit' do
   use_frameworks!
 
     pod 'EFQRCode' 
-    pod 'XYZPathKit'  
+    pod 'XYZPathKit' 
 
 end

@@ -30,6 +30,8 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate,AVCap
     var output:AVCaptureMetadataOutput
     let session = AVCaptureSession()
     var previewLayer:AVCaptureVideoPreviewLayer?
+    
+    @available(iOS, deprecated: 13.0)
     var stillImageOutput:AVCaptureStillImageOutput?
     
     //存储返回结果
@@ -53,6 +55,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate,AVCap
      - parameter success:      返回识别信息
      - returns:
      */
+    @available(iOS, deprecated: 13.0)
     init( videoPreView:UIView,objType:[AVMetadataObject.ObjectType] = [(AVMetadataObject.ObjectType.qr as NSString) as AVMetadataObject.ObjectType],isCaptureImg:Bool,cropRect:CGRect=CGRect.zero,success:@escaping ( ([LBXScanResult]) -> Void) ){
         do{input = try AVCaptureDeviceInput(device: device!)}catch let error as NSError {
             print("AVCaptureDeviceInput(): \(error)")
@@ -93,6 +96,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate,AVCap
         }
     }
     
+    @available(iOS, deprecated: 13.0)
     public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         captureOutput(output, didOutputMetadataObjects: metadataObjects, from: connection)
     }
@@ -110,6 +114,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate,AVCap
         }
     }
     
+    @available(iOS, deprecated: 13.0)
     open func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         //上一帧处理中
         guard isNeedScanResult else{return}
@@ -125,7 +130,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate,AVCap
                 let codeContent = code.stringValue //                print("code string:%@",codeContent)
                 //4个字典，分别 左上角-右上角-右下角-左下角的 坐标百分百，可以使用这个比例抠出码的图像
                 // let arrayRatio = code.corners
-                arrayResult.append(LBXScanResult(str: codeContent, img: UIImage(), barCodeType: codeType.rawValue, corner: code.corners as [AnyObject]?))
+                arrayResult.append(LBXScanResult(str: codeContent, img: UIImage(), barCodeType: codeType.rawValue, corner: code.__corners as [AnyObject]?))
             }
         }
         
@@ -137,6 +142,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate,AVCap
         } else{isNeedScanResult = true}
     }
     
+    @available(iOS, deprecated: 13.0)
     //MARK: ----拍照
     open func captureImage(){
         let stillImageConnection:AVCaptureConnection? = connectionWithMediaType(mediaType: AVMediaType.video as AVMediaType, connections: (stillImageOutput?.connections)! as [AnyObject])
@@ -152,6 +158,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate,AVCap
             self.successBlock(self.arrayResult)
         })
     }
+//    pragma clang diagnostic pop
     
     open func connectionWithMediaType(mediaType:AVMediaType, connections:[AnyObject]) -> AVCaptureConnection?{
         for connection:AnyObject in connections{
@@ -429,7 +436,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate,AVCap
         return newPic!;
     }
     deinit{
-//        print("LBXScanWrapper deinit")
+        print("LBXScanWrapper deinit")
         
     }
 }
