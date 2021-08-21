@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import AVFoundation
 
-public protocol LBXScanViewControllerDelegate: class { func scanFinished(scanResult: LBXScanResult, error: String?)}
+public protocol LBXScanViewControllerDelegate: AnyObject { func scanFinished(scanResult: LBXScanResult, error: String?)}
 public protocol QRRectDelegate               { func drawwed()}
 open class LBXScanViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

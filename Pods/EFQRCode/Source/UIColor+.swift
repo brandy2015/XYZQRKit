@@ -4,7 +4,7 @@
 //
 //  Created by EyreFree on 2019/11/21.
 //
-//  Copyright © 2019 EyreFree. All rights reserved.
+//  Copyright (c) 2017-2021 EyreFree <eyrefree@eyrefree.org>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -48,7 +48,6 @@ extension UIColor {
 }
 
 extension UIColor {
-
     #if canImport(CoreImage)
     func ciColor() -> CIColor {
         return CIColor(color: self)
@@ -59,13 +58,12 @@ extension UIColor {
         return self.cgColor
     }
     
-    static func white(white: CGFloat = 1.0, alpha: CGFloat = 1.0) -> UIColor {
+    static func white(_ white: CGFloat = 1.0, alpha: CGFloat = 1.0) -> UIColor {
         return self.init(white: white, alpha: alpha)
     }
     
-    static func black(black: CGFloat = 1.0, alpha: CGFloat = 1.0) -> UIColor {
-        let white: CGFloat = 1.0 - black
-        return Self.white(white: white, alpha: alpha)
+    static func black(_ black: CGFloat = 1.0, alpha: CGFloat = 1.0) -> UIColor {
+        return white(1.0 - black, alpha: alpha)
     }
 }
 #endif

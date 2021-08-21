@@ -2,7 +2,7 @@
 import UIKit
 
 
-public protocol QQScanViewControllerDelegate: class {
+public protocol QQScanViewControllerDelegate: AnyObject {
     func Result(_ controller: QQScanViewController, didFinishGet ScanResults: [LBXScanResult])
     func Result(_ controller: QQScanViewController)
 }

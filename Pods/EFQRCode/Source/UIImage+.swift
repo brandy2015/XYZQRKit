@@ -4,7 +4,7 @@
 //
 //  Created by EyreFree on 2019/11/21.
 //
-//  Copyright © 2019 EyreFree. All rights reserved.
+//  Copyright (c) 2017-2021 EyreFree <eyrefree@eyrefree.org>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -35,7 +35,6 @@ import CoreImage
 #endif
 
 extension UIImage {
-
     #if canImport(CoreImage)
     func ciImage() -> CIImage? {
         return self.ciImage ?? CIImage(image: self)
@@ -43,13 +42,12 @@ extension UIImage {
     #endif
 
     func cgImage() -> CGImage? {
-        let rtnValue: CGImage? = self.cgImage
+        let rtnValue = self.cgImage
         #if canImport(CoreImage)
-        if nil == rtnValue {
-            return ciImage?.cgImage()
-        }
-        #endif
+        return rtnValue ?? ciImage?.cgImage()
+        #else
         return rtnValue
+        #endif
     }
 }
 
@@ -72,7 +70,6 @@ extension UIImage {
 }
 
 extension UIImage {
-
     func cornerRadiused(radius: CGFloat) -> UIImage? {
         let imageLayer: CALayer = CALayer()
         imageLayer.frame = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)

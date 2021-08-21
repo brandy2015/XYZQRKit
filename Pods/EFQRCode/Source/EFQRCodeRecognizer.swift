@@ -4,7 +4,7 @@
 //
 //  Created by EyreFree on 2017/3/28.
 //
-//  Copyright (c) 2017 EyreFree <eyrefree@eyrefree.org>
+//  Copyright (c) 2017-2021 EyreFree <eyrefree@eyrefree.org>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -27,39 +27,42 @@
 #if canImport(CoreImage)
 import CoreImage
 
+/// Class for recognizing QR code contents from images.
 @objcMembers
 public class EFQRCodeRecognizer: NSObject {
-
-    private var image: CGImage? {
+    /// The QR code to recognize.
+    public var image: CGImage {
         didSet {
             contentArray = nil
         }
     }
-    public func setImage(image: CGImage?) {
-        self.image = image
-    }
 
+    /// Recognized QR code content cache.
     private var contentArray: [String]?
 
+    /// Initialize a QR code recognizer to recognize the specified `image`.
+    /// - Parameter image: a QR code to recognize.
     public init(image: CGImage) {
         self.image = image
     }
 
-    public func recognize() -> [String]? {
+    /// Recognizes and returns the contents of the current QR code `image`.
+    /// - Returns: an array of contents recognized from `image`.
+    /// - Note: If the returned array is empty, there's no recognizable content in the QR code `image`.
+    public func recognize() -> [String] {
         if nil == contentArray {
             contentArray = getQRString()
         }
-        return contentArray
+        return contentArray!
     }
 
-    // Get QRCodes from image
-    private func getQRString() -> [String]? {
-        guard let finalImage = image else {
-            return nil
-        }
-        let result = finalImage.ciImage().recognizeQRCode(options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
-        if result.isEmpty {
-            return finalImage.grayscale?.ciImage().recognizeQRCode(
+    /// Get QRCodes from image
+    private func getQRString() -> [String] {
+        let result = image.ciImage().recognizeQRCode(
+            options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]
+        )
+        if result.isEmpty, let grayscaleImage = image.grayscale {
+            return grayscaleImage.ciImage().recognizeQRCode(
                 options: [CIDetectorAccuracy: CIDetectorAccuracyLow]
             )
         }

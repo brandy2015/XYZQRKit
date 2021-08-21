@@ -1,9 +1,9 @@
 PODS:
-  - EFQRCode (6.0.0):
-    - swift_qrcodejs (~> 1.2.0)
+  - EFQRCode (6.1.0):
+    - swift_qrcodejs (~> 2.2.2)
   - XYZPathKit (3.0.1):
     - XYZTimeKit
-  - XYZTimeKit (3.0.1)
+  - XYZTimeKit (3.0.2)
 
 DEPENDENCIES:
   - EFQRCode
@@ -16,9 +16,9 @@ SPEC REPOS:
     - XYZTimeKit
 
 SPEC CHECKSUMS:
-  EFQRCode: 27f7ef4382159d79d583d839cdfc596b5ac98c9f
+  EFQRCode: 994654b3ad1657ab751b92422cef8b8f7d1b1496
   XYZPathKit: 156c2652202f98e47f41a8767b62be8e614ea80c
-  XYZTimeKit: 83a8914a1ee29119ba8afc1615edae979594db1c
+  XYZTimeKit: 6617293c8728041a35e064d82858ee2737ae3f84
 
 PODFILE CHECKSUM: 17d6b2a08f0bdd74288a00ae1e93acf87c3213e0
 

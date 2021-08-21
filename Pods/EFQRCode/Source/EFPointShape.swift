@@ -4,7 +4,7 @@
 //
 //  Created by EyreFree on 2018/11/14.
 //
-//  Copyright (c) 2017 EyreFree <eyrefree@eyrefree.org>
+//  Copyright (c) 2017-2021 EyreFree <eyrefree@eyrefree.org>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,15 +24,14 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import CoreGraphics
 import Foundation
 
-#if canImport(CoreImage)
-import CoreImage
-#endif
-
+/// Shapes of foreground code points.
 @objc public enum EFPointShape: Int {
+    /// Classical QR code look and feel 🔳.
     case square         = 0
+    /// More well rounded 🔘.
     case circle         = 1
+    /// Sparkling ✨.
     case diamond        = 2
 }

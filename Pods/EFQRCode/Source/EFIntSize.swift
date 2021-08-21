@@ -4,7 +4,7 @@
 //
 //  Created by EyreFree on 2018/11/14.
 //
-//  Copyright (c) 2017 EyreFree <eyrefree@eyrefree.org>
+//  Copyright (c) 2017-2021 EyreFree <eyrefree@eyrefree.org>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -26,25 +26,35 @@
 
 import CoreGraphics
 
-#if canImport(CoreImage)
-import CoreImage
-#endif
-
+/// A structure that contains width and height values.
+///
+/// - Note: This is like `CGSize`, but with `Int` instead of `CGFloat`.
 @objcMembers
-public class EFIntSize: NSObject {
-    public private(set) var width: Int = 0
-    public private(set) var height: Int = 0
+public final class EFIntSize: NSObject {
+    /// A width value.
+    public let width: Int
+    /// A height value.
+    public let height: Int
 
-    public init(width: Int, height: Int) {
+    /// Creates a size with dimensions specified as integer values.
+    /// - Parameters:
+    ///   - width: The width value.
+    ///   - height: The height value.
+    /// - Note: Creates a size with zero width and height if no argument is specified.
+    public init(width: Int = 0, height: Int = 0) {
         self.width = width
         self.height = height
     }
-    
-    public init(size: CGSize) {
-        self.width = Int(size.width)
-        self.height = Int(size.height)
+
+    /// Converts `CGSize` to `EFIntSize`.
+    /// - Parameter size: the `CGSize` to convert.
+    /// - Note: `width` and `height` will be truncated to `Int`.
+    public convenience init(size: CGSize) {
+        self.init(width: Int(size.width),
+                  height: Int(size.height))
     }
 
+    /// Representation as `CGSize`.
     public var cgSize: CGSize {
         return CGSize(width: width, height: height)
     }

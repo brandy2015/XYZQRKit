@@ -17,7 +17,10 @@ public class XYZQRKit:NSObject{}
 public extension UIImage{
     
     func ScanQRToString(completion: @escaping ((_ BackData: [String]?) -> Void))  {
-        guard let testImage = self.cgImage ,let tryCodes = EFQRCode.recognize(image: testImage) ,tryCodes.count > 0 else{completion(nil);return}
+         
+        guard let testImage = self.cgImage else{completion(nil);return}
+              
+        let tryCodes = EFQRCode.recognize(testImage)
         completion(tryCodes)
     }
     
@@ -28,7 +31,7 @@ public extension UIImage{
 public extension UIImage{
     func ImgToQR(WithString:String,icon:UIImage?,completion: @escaping ((_ BackQR: UIImage?) -> Void)){
         
-        guard let tryImage = EFQRCode.generate(content: WithString,watermark: self.cgImage,icon: icon?.cgImage ) else{completion(nil);return}
+        guard let tryImage = EFQRCode.generate(for: WithString,watermark: self.cgImage,icon: icon?.cgImage ) else{completion(nil);return}
         completion(UIImage(cgImage: tryImage))
     }
     
@@ -40,9 +43,10 @@ public extension Data{
         let URLPath = userCookies + (UUID().uuidString + ".gif")
         let generator = EFQRCodeGenerator(content: WithString)
         
-        generator.setIcon(icon: icon?.cgImage, size: nil)
+        generator.withIcon(icon?.cgImage, size: nil)
         
-        guard let qrcodeData = EFQRCode.generateWithGIF(data: self, generator: generator) else{ completion(nil,nil);return}
+        guard let qrcodeData = EFQRCode.generateGIF(using: generator, withWatermarkGIF: self, delay: 1, loopCount: 5, useMultipleThreads: false) else{ completion(nil,nil);return}
+         
         do { try qrcodeData.write(to: URLPath)
             completion(qrcodeData,URLPath.url)
         }catch{completion(nil, nil)}

@@ -4,7 +4,7 @@
 //
 //  Created by EyreFree on 2018/11/14.
 //
-//  Copyright (c) 2017 EyreFree <eyrefree@eyrefree.org>
+//  Copyright (c) 2017-2021 EyreFree <eyrefree@eyrefree.org>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,10 +25,15 @@
 //  THE SOFTWARE.
 
 import CoreGraphics
-import Foundation
 
+/// The color rendering modes.
 public enum EFQRCodeMode {
+    /// Use original colors.
+    /// - Important: Use `nil` instead.
+    @available(*, deprecated, message: "Use `nil` instead.")
     case none
+    /// Black and white only.
     case grayscale
+    /// Use only background and foreground color.
     case binarization(threshold: CGFloat)
 }

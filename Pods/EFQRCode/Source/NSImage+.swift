@@ -4,7 +4,7 @@
 //
 //  Created by EyreFree on 2019/11/21.
 //
-//  Copyright © 2019 EyreFree. All rights reserved.
+//  Copyright (c) 2017-2021 EyreFree <eyrefree@eyrefree.org>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,6 @@ import AppKit
 import CoreImage
 
 extension NSImage {
-    
     func ciImage() -> CIImage? {
         return self.tiffRepresentation(using: .none, factor: 0).flatMap(CIImage.init)
     }

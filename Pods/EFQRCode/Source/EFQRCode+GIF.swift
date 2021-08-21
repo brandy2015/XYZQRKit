@@ -4,7 +4,7 @@
 //
 //  Created by EyreFree on 2017/10/23.
 //
-//  Copyright (c) 2017 EyreFree <eyrefree@eyrefree.org>
+//  Copyright (c) 2017-2021 EyreFree <eyrefree@eyrefree.org>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -34,20 +34,31 @@ import MobileCoreServices
 import CoreServices
 #endif
 
-public extension EFQRCode {
-
+extension EFQRCode {
     private static let framesPerSecond = 24
 
     private static func batchWatermark(frames: inout [CGImage], generator: EFQRCodeGenerator, start: Int, end: Int) {
         for index in start ... end {
-            generator.setWatermark(watermark: frames[index])
+            generator.watermark = frames[index]
             if let frameWithCode = generator.generate() {
                 frames[index] = frameWithCode
             }
         }
     }
-    
-    static func generateWithGIF(data: Data, generator: EFQRCodeGenerator, pathToSave: URL? = nil, delay: Double? = nil, loopCount: Int? = nil, useMultipleThread:Bool = false) -> Data? {
+
+    /// Generates an animated QR code GIF with a `generator` specifying other parameters.
+    /// - Parameters:
+    ///   - generator: An `EFQRCodeGenerator` providing other QR code generation settings.
+    ///   - data: The data of the watermark GIF.
+    ///   - delay: Output QRCode GIF delay, emitted means no change.
+    ///   - loopCount: Times looped in GIF, emitted means no change.
+    ///   - useMultipleThreads: Wether to use multiple threads for better performance,
+    ///                         defaults to `false`.
+    /// - Returns: The generated QR code GIF.
+    public static func generateGIF(using generator: EFQRCodeGenerator,
+                                   withWatermarkGIF data: Data,
+                                   delay: Double? = nil, loopCount: Int? = nil,
+                                   useMultipleThreads: Bool = false) -> Data? {
         if let source = CGImageSourceCreateWithData(data as CFData, nil) {
             var frames = source.toCGImages()
 
@@ -78,7 +89,7 @@ public extension EFQRCode {
                 fileProperties = tempDict as CFDictionary
             }
 
-            if useMultipleThread {
+            if useMultipleThreads {
                 let group = DispatchGroup()
 
                 let threshold = frames.count / framesPerSecond
@@ -105,12 +116,13 @@ public extension EFQRCode {
             } else {
                 // Clear watermark
                 for (index, frame) in frames.enumerated() {
-                    generator.setWatermark(watermark: frame)
+                    generator.watermark = frame
                     if let frameWithCode = generator.generate() {
                         frames[index] = frameWithCode
                     }
                 }
             }
+            generator.clearCache()
             
             if let fileProperties = fileProperties, framePropertiesArray.count == frames.count {
                 return frames.toGifData(framePropertiesArray: framePropertiesArray, fileProperties: fileProperties)
@@ -121,7 +133,6 @@ public extension EFQRCode {
 }
 
 extension CGImageSource {
-
     // GIF
     func toCGImages() -> [CGImage] {
         let gifCount = CGImageSourceGetCount(self)
@@ -133,7 +144,6 @@ extension CGImageSource {
 }
 
 extension Array where Element: CGImage {
-
     func toGifData(framePropertiesArray: [CFDictionary], fileProperties: CFDictionary) -> Data? {
         guard let mutableData = CFDataCreateMutable(nil, 0) else { return nil }
         guard let destination = CGImageDestinationCreateWithData(mutableData, kUTTypeGIF, count, nil) else { return nil }
