@@ -313,18 +313,18 @@ public class EFQRCodeGenerator: NSObject {
         return withOpaqueWatermark(!isTransparent)
     }
 
-    /// Shape of foreground code points, defaults to `EFPointShape.square`.
-    public var pointShape: EFPointShape = .square {
+    /// Style of foreground code points, defaults to `EFPointStyle.square`.
+    public var pointStyle: EFPointStyle = EFSquarePointStyle.square {
         didSet {
             imageQRCode = nil
         }
     }
-    /// Set generator to use the specified foreground point shape.
-    /// - Parameter pointShape: Shape of foreground code points.
+    /// Set generator to use the specified foreground point style.
+    /// - Parameter pointStyle: Style of foreground code points.
     /// - Returns: `self`, allowing chaining.
     @discardableResult
-    public func withPointShape(_ pointShape: EFPointShape) -> EFQRCodeGenerator {
-        return with(\.pointShape, pointShape)
+    public func withPointStyle(_ pointStyle: EFPointStyle) -> EFQRCodeGenerator {
+        return with(\.pointStyle, pointStyle)
     }
 
     /// If `true` (default), points for timing pattern will be squares.
@@ -342,7 +342,7 @@ public class EFQRCodeGenerator: NSObject {
         return with(\.isTimingPointStatic, isStatic)
     }
     /// Set generator to use styled points for timing pattern (or not).
-    /// - Parameter ignoreTiming: Wether or not to use current `pointShape`
+    /// - Parameter ignoreTiming: Wether or not to use current `pointStyle`
     ///     for timing pattern points, defaults to `true`.
     /// - Returns: `self`, allowing chaining.
     @discardableResult
@@ -813,43 +813,8 @@ public class EFQRCodeGenerator: NSObject {
         )
     }
     
-    private func fillDiamond(context: CGContext, rect: CGRect) {
-        // shrink rect edge
-        let drawingRect = rect.insetBy(dx: -2, dy: -2)
-        
-        // create path
-        let path = CGMutablePath()
-        // Bezier Control Point
-        let controlPoint = CGPoint(x: drawingRect.midX , y: drawingRect.midY)
-        // Bezier Start Point
-        let startPoint = CGPoint(x: drawingRect.minX, y: drawingRect.midY)
-        // the other point of diamond
-        let otherPoints = [CGPoint(x: drawingRect.midX, y: drawingRect.maxY),
-                           CGPoint(x: drawingRect.maxX, y: drawingRect.midY),
-                           CGPoint(x: drawingRect.midX, y: drawingRect.minY)]
-        
-        path.move(to: startPoint)
-        for point in otherPoints {
-            path.addQuadCurve(to: point, control: controlPoint)
-        }
-        path.addQuadCurve(to: startPoint, control: controlPoint)
-        context.addPath(path)
-        context.fillPath()
-    }
-
     private func drawPoint(context: CGContext, rect: CGRect, isStatic: Bool = false) {
-        switch pointShape {
-        case .circle:
-            context.fillEllipse(in: rect)
-        case .diamond:
-            if isStatic {
-                context.fill(rect)
-            } else {
-                fillDiamond(context: context, rect: rect)
-            }
-        case .square:
-            context.fill(rect)
-        }
+        pointStyle.fillRect(context: context, rect: rect, isStatic: isStatic)
     }
 
     private func createContext(size: EFIntSize) -> CGContext? {

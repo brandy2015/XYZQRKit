@@ -63,6 +63,14 @@ EFQRCode is a lightweight, pure-Swift library for generating stylized QRCode ima
 
 ## Demo Projects
 
+### TestFlight
+
+You can click the `TestFlight` button below to download demo with TestFlight:
+
+<a target='_blank' href='https://testflight.apple.com/join/LixgpwWt'>
+    <img src='https://testflight.apple.com/images/testflight-128x128_2x_27.png' width='128' height='128'/>
+</a>
+
 ### App Store
 
 You can click the `App Store` button below to download demo, support iOS, tvOS and watchOS:
@@ -94,7 +102,7 @@ git clone git@github.com:EFPrefix/EFQRCode.git; cd EFQRCode; sh Startup.sh; open
 | 1.x     | Xcode 8.0+<br>Swift 3.0+<br>iOS 8.0+ / macOS 10.11+ / tvOS 9.0+                |
 | 4.x     | Xcode 9.0+<br>Swift 4.0+<br>iOS 8.0+ / macOS 10.11+ / tvOS 9.0+ / watchOS 2.0+ |
 | 5.x     | Xcode 11.1+<br>Swift 5.0+<br>iOS 8.0+ / macOS 10.11+ / tvOS 9.0+ / watchOS 2.0+|
-| **6.x** | Xcode 12.0+<br>Swift 5.1+<br>iOS 9.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+|
+| **6.x** | Xcode 12.0+<br>[![latest Swift](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FEFPrefix%2FEFQRCode%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/EFPrefix/EFQRCode)<br>iOS 9.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+|
 
 ## Installation
 
@@ -104,7 +112,7 @@ EFQRCode is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'EFQRCode', '~> 6.1.0'
+pod 'EFQRCode', '~> 6.2.0'
 ```
 
 Then, run the following command:
@@ -129,7 +137,7 @@ $ brew install carthage
 To integrate EFQRCode into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "EFPrefix/EFQRCode" ~> 6.1.0
+github "EFPrefix/EFQRCode" ~> 6.2.0
 ```
 
 Run `carthage update` to build the framework and drag the built `EFQRCode.framework` into your Xcode project.
@@ -142,7 +150,7 @@ Once you have your Swift package set up, adding EFQRCode as a dependency is as e
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/EFPrefix/EFQRCode.git", .upToNextMinor(from: "6.1.0"))
+    .package(url: "https://github.com/EFPrefix/EFQRCode.git", .upToNextMinor(from: "6.2.0"))
 ]
 ```
 
