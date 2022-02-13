@@ -16,34 +16,26 @@ Pod::Spec.new do |s|
   #
 
     s.name         = "XYZQRKit"
-    s.version      = "3.0.4"
+    s.version      = "3.0.5"
     s.summary      = "Private pod to set"
     s.description  = <<-DESC
         Private pod to deal with QRCode
-
       DESC
-
     s.homepage     = "https://github.com/brandy2015"
     s.license      = "MIT"
     s.swift_version = '5.0'
     s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
     s.ios.deployment_target = '13.0'
-    s.dependency 'SwiftDate'
     s.author             = { "Brandy" => "" }
     s.authors            = { "Brandy" => "zhangqianbrandy2012@gmail.com" }
     s.platform     = :ios, "13.0"
-
-
-    s.source       = { :git => "https://github.com/brandy2015/XYZQRKit.git", :tag => "3.0.4"}
-s.source_files = "XYZQRKit/Source/*"
-
-s.resources = "XYZQRKit/Source/CodeScan.bundle"
+    s.source       = { :git => "https://github.com/brandy2015/XYZQRKit.git", :tag => "3.0.5"}
+    s.source_files = "XYZQRKit/Source/*"
+    s.resources = "XYZQRKit/Source/CodeScan.bundle"
 
  
     s.dependency 'EFQRCode'
-    s.dependency 'XYZPathKit'
-    
-
+    s.dependency 'XYZPathKit'  
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?

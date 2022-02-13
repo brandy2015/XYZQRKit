@@ -17,9 +17,7 @@ public class XYZQRKit:NSObject{}
 public extension UIImage{
     
     func ScanQRToString(completion: @escaping ((_ BackData: [String]?) -> Void))  {
-         
         guard let testImage = self.cgImage else{completion(nil);return}
-              
         let tryCodes = EFQRCode.recognize(testImage)
         completion(tryCodes)
     }
@@ -78,7 +76,8 @@ public extension String{
 public extension URL{
      func savePicOrGIFToAlbum()  {
         PHPhotoLibrary.shared().performChanges({
-            PHAssetChangeRequest.creationRequestForAssetFromImage(atFileURL: self)
+            let x =   PHAssetChangeRequest.creationRequestForAssetFromImage(atFileURL: self)
+            x?.creationDate = Date()
         }) { (isSuccess: Bool, error: Error?) in
             if isSuccess {print("保存成功")} else{ print("保存失败：", error!.localizedDescription)}
         }
@@ -86,7 +85,8 @@ public extension URL{
     
     func saveVideoToAlbum(){
         PHPhotoLibrary.shared().performChanges({
-            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self)
+           let x =  PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self)
+            x?.creationDate = Date()
         }) { (isSuccess: Bool, error: Error?) in
             if isSuccess {print("保存成功")} else{ print("保存失败：", error!.localizedDescription)}
         }
@@ -95,7 +95,8 @@ public extension URL{
 public extension UIImage{
     func savePicOrGIFToAlbum()  {
         PHPhotoLibrary.shared().performChanges({
-            PHAssetChangeRequest.creationRequestForAsset(from: self)
+            let x =   PHAssetChangeRequest.creationRequestForAsset(from: self)
+            x.creationDate = Date()
         }) { (isSuccess: Bool, error: Error?) in
             if isSuccess {print("保存成功")} else{ print("保存失败：", error!.localizedDescription)}
         }
@@ -116,8 +117,6 @@ public extension UIImageView{
         case .ended:print("停止点按");XYZResponse.D点按马达震动反馈(style: .heavy)
         guard let img = self.image else{print("没有照片");return}
         XYZResponse.D点按马达震动反馈(style: .heavy)
-        
-        
             img.SaveToAlbum { (Succeedx, error) in
                 if let error = error{
                     print(error)
@@ -127,31 +126,10 @@ public extension UIImageView{
                     }
                 }
             }
-        
-            
-            
-            
         default: print("没有照片")
         }
         
     }
-//    @objc func longPress(_ gusture:UILongPressGestureRecognizer){print("长按了")// 检测手势阶段
-//        switch gusture.state {
-//            case .began:XYZResponse.D点按马达震动反馈(style: .heavy);print("开始点按")
-//            case .ended:print("停止点按");XYZResponse.D点按马达震动反馈(style: .heavy)
-//                    guard let img = self.image else{print("没有照片");return}
-//                    XYZResponse.D点按马达震动反馈(style: .heavy)
-//            img.SaveToAlbum { (Succeedx, error) in
-//                if let error = error{
-//                    print(error)
-//                }else if Succeedx{
-//                    XYZJump.To.Album();print("弹出是否保存")
-//                }
-//            }
-//
-//            default: print("没有照片")
-//        }
-//    }
     private class XYZResponse: NSObject {
         /// 创建枚举
         public enum FeedbackType: Int {case light,medium,heavy,success,warning,error,none}
@@ -172,18 +150,14 @@ public extension UIImageView{
         
     }
     
-    
     private class XYZJump: NSObject {
         public static var To = XYZJump()
-         
         public func Album() {decodejump(To: "cGhvdG9zLXJlZGlyZWN0Oi8v")}
-        
         //需要商榷
         //    TOUCHID
         public func TOUCHID()  {
             decodejump(To: "QXBwLVByZWZzOnJvb3Q9VE9VQ0hJRF9QQVNTQ09ERQ==")
         }
-          
         private func decodejump(To code:String) {
             //跳转
             let urlStr = decode(code)
@@ -194,7 +168,6 @@ public extension UIImageView{
                     }
                 } else { UIApplication.shared.openURL(url)}}
         }
-        
         //base64解码
         private func decode(_ string: String) -> String {
             let data = Data(base64Encoded: string, options: [])
